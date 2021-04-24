@@ -1,0 +1,30 @@
+.offscreen {
+    clip-path: inset(100%);
+    clip: rect(1px 1px 1px 1px); /* IE 6/7 */
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap; /* added line */
+    width: 1px;
+  }
+  .no-selection {
+    user-select: none;
+    -webkit-user-select: none; /* webkit (safari, chrome) browsers */
+    -moz-user-select: none; /* mozilla browsers */
+    -khtml-user-select: none; /* webkit (konqueror) browsers */
+    -ms-user-select: none; /* IE10+ */
+  }
+  html {
+    /* the default font size if the user doesnt change
+    anything, and no css is applied, is 16px
+    font-size: 16px;
+    this will still be 16px
+    font-size: 100%;
+    if we want our default fontsize to be 10px: 10/16 = 0,625
+    this means one rem is 62.5%, which is 10px */
+    font-size: 62.5%;
+    /* from now on we can use rem units, and 1 rem will mean 10px */
+    font-family: 'Heebo', sans-serif;
+    background-color: #333448;
+  }

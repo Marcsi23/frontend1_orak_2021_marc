@@ -1,0 +1,83 @@
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+    background-color: rgb(32, 38, 53);
+    }
+
+.main-menu-container {
+    padding-top: 50px;
+}
+
+.main-menu {
+    padding: 0;
+    border-bottom: 3px solid #68d2c3;
+    text-align: center;
+    }
+    
+.main-menu-item {
+    display: inline-block;
+    position: relative;
+}
+
+.main-menu-item a,
+.main-menu-item span {
+    display: block;
+    text-decoration: none;
+    color: #54beff;
+    width: 120px;
+padding: 20px 0;
+    }
+
+        .main-menu-item:hover a, 
+        .main-menu-item:hover span {
+        color: white;
+        background-color: rgb (34, 116, 175);
+        cursor: pointer;
+    }
+
+.sub-menu {
+    list-style: none;
+    background-color: rgb (34, 116, 175);
+    padding: 0;
+    position: absolute;
+    top: 59px;
+}
+
+    .main-content {
+        color:white;
+        width: 800px;
+        margin: 40px auto 0 auto;
+    }
+    header {
+        width: 400px;
+    }
+
+    h1 {
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+
+    header p {
+        font-size: 22px;
+        margin: 0 0 30px 0;
+    }
+
+    .company-image {
+        float: right;
+    }
+    
+    main {
+        width: 500px;
+        line-height: 1.6;
+    }
+
+    footer {
+        color: white;
+        text-align: center;
+        margin-top: 20px;
+    }
