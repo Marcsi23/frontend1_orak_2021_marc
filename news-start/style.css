@@ -1,0 +1,250 @@
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+body {
+  font-family: "Playfair Dislplay", serif;
+  background-color: rgb(242, 237, 228);
+  margin: 0;
+}
+
+header,
+main {
+  width: 80vw;
+  margin: 0 auto;
+}
+
+header {
+  /* mostantól ez az elem felx konténer, a közvetlen gyerekei pedig flex itemek */
+  display: flex;
+}
+
+.logo {
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+}
+
+.logo > h1 {
+  font-size: 2.25rem;
+  margin: 0;
+  padding: 0;
+  border-bottom: 4px solid black;
+}
+
+.logo > h2 {
+  font-size: 1rem;
+  padding: 0;
+  margin: 1rem 0 0 0;
+  font-style: italic;
+  line-height: 0;
+  color: rgba(90, 86, 79, 1);
+  letter-spacing: 0.3rem;
+}
+
+/* eltünteti a hamburger ikont és a checkboxot */
+.menu-checkbox,
+.toggle-label {
+  display: none;
+}
+
+.menu-container {
+  /* az elem szélessége legyen akkora, amekkora csak lehet */
+  flex-grow: 1;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+.menu-item {
+  flex-grow: 1;
+}
+
+.menu-item:nth-child(1) {
+  border-bottom: 4px solid red;
+}
+
+.menu-item:nth-child(2) {
+  border-bottom: 4px solid lightblue;
+}
+
+.menu-item:nth-child(3) {
+  border-bottom: 4px solid plum;
+}
+
+.menu-item:nth-child(4) {
+  border-bottom: 4px solid green;
+}
+
+.menu-item:nth-child(5) {
+  border-bottom: 4px solid yellow;
+}
+
+.menu-item a {
+  text-decoration: none;
+  color: black;
+
+  /* a magasság inline elemeken nem érvényes */
+  height: 2rem;
+
+  /* ez az elem már nem inline elem, hanem flex konténer */
+  display: flex;
+
+  /* a flex-itemek itt, a menüpontban lévő karakterek */
+  align-items: center;
+  justify-content: center;
+}
+
+/* ha a menu-itemre hoverezek, akkor az aláhúzás tűnjön el és az egész gomb kattintható legyen */
+.menu-item:hover {
+  border-bottom: 4px solid transparent;
+  background-color: rgba(189, 198, 233, 0, 56);
+}
+
+.main-article {
+  position: relative;
+}
+
+.main-article-image-container {
+  height: 40vw;
+  overflow: hidden;
+}
+
+.main-article-image {
+  width: 100%;
+}
+
+.main-article-text {
+  font-family: "Merriweather", serif;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.767);
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+}
+
+.main-article-text > h1 {
+  font-size: 3rem;
+  color: white;
+  margin-bottom: 0;
+}
+
+.main-article-text > h2 {
+  font-size: 1rem;
+  color: white;
+  line-height: 1.6rem;
+}
+
+.tag {
+  color: white;
+  padding: 5px;
+  text-decoration: none;
+}
+
+.tag i {
+  padding: 5px;
+}
+
+.tag-politics {
+  background-color: red;
+}
+
+.continue-to-article {
+  background-color: blue;
+  color: white;
+  font-style: italic;
+  font-size: 1rem;
+  padding: 7px;
+  text-decoration: none;
+  float: right;
+}
+
+.continue-to-article i {
+  padding-left: 0.8rem;
+}
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.gallery-item {
+  margin: 0.5rem;
+}
+
+.galerry-item img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* max-widht: 960px: 960px alatt... */
+
+/* min-widht: 960px: 960px fölött... */
+
+/* 900 és 600px között: */
+
+/* @media and screen (max-widht: 960px) and (min-widht: 600px) {...} */
+
+@media (max-widht: 960px) {
+  header {
+    flex-direction: column;
+  }
+
+  .logo {
+    margin-right: 0;
+  }
+}
+
+@media (max-widht: 900px) {
+  .main-article-text {
+    position: static;
+  }
+}
+
+/* hamburger menü */
+@media (max-widht: 700px) {
+  header {
+    margin-top: 2rem;
+  }
+
+  .logo {
+    width: 80%;
+  }
+
+  .toggle-label {
+    display: block;
+    font-size: 2rem;
+    cursor: pointer;
+
+    /* ha jobbra akarom tolni az elemet, akkor margin-left auto */
+    margin-left: auto;
+    /* lefelé mozdítja az elemet */
+    margin-bottom: -65px;
+  }
+
+  .menu-checkbox: checked ~.menu-container {
+    display: block;
+  }
+
+  .menu-container {
+    display: none;
+  }
+
+  .menu {
+    flex-direction: column;
+  }
+}
+
+.menu-item a {
+  height: 3rem;
+}
+
+.main-article-text > h1 {
+  font-size: 1.6rem;
+}
